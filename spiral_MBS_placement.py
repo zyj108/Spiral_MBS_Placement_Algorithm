@@ -1,12 +1,11 @@
-import copy
-import datetime
+
 from matplotlib import  pyplot as plt
-import random
 import numpy as np
 import pandas as pd
 import copy
 import LocalCover
 import math
+import UAVByKMean
 class SpiralMBSPlacement:
 
     # 通过计算三角形p1p2p3的面积（点在直线左边结果为正，直线右边结果为负）来判断 p3相对于直线p1p2的位置
@@ -269,6 +268,9 @@ if __name__ == "__main__":
     # for dot in data:
     #     print(dot[0],dot[1])
     data = list(set(data[0:400]))
+
+    #  使用K-means
+    # UAVpositionSet = UAVByKMean.binarysearch(data,  radius)
     # print(*data,sep='\n')
     UAVpositionSet = s.execute(data,radius)
     print(len(UAVpositionSet))
